@@ -32,7 +32,9 @@ foreach(int el in arr2)
 }
 Console.WriteLine($"Quantity of even numbers: {count}");
 }
-int[] array = GetArray(10);  // указываем длину массива, и диапазон рандомных чисел
+
+
+int[] array = GetArray(10);
 PrintArray(array);
 Console.WriteLine();
 FindEvenNumbers(array);
