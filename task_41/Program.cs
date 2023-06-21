@@ -46,6 +46,7 @@ return count;
 int length = Prompt($"Enter quantity of numbers: ");
 int[] array = GetArray(length);;
 PrintArray(array);
+Console.WriteLine();
 Console.WriteLine($"Quantity of numbers more than zero: {NumMoreZero(array)}");
 
 
