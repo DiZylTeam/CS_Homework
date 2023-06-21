@@ -22,7 +22,7 @@ double[,] GetArray(int m, int n, int minValue, int maxValue)
     {
         for(int j = 0; j < n; j++)
         {
-            result[i, j] = rand.NextDouble()*100;   // функционал, который выводит случайные вещественные числа
+            result[i, j] = Math.Round(rand.NextDouble()*100, 2);   // функционал, который выводит случайные вещественные числа с округлением
         }
     }
     return result;
