@@ -42,40 +42,20 @@ void PrintArray(int[,] inArray)
 }
 
 
-void GetColumnAverageNumber(int[,] array)
+double[] GetColumnAverageNumber(int[,] array)
 {
-    double average = 0;
-    int i = 0;
-    int j = 0;
-    int sum = 0;
-    while (j < array.GetLength(0))
+    double[] average = new double[array.GetLength(1)];
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-    while (i < array.GetLength(1))
-    {
-        sum = sum + array [i, j];
-        i++;
+        double sum = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sum = sum + array[i, j];
+        }
+        average[j] = Math.Round(sum / array.GetLength(0), 2);
     }
-    average = sum / i;
-    Console.WriteLine($"Average number of each calomns: {average} ");
-    i = 0;
-    j++;
-    }
-    }
-
-
-
-
-    // for (int i = 0; i < array.GetLength(1); i++)
-    // {
-    //     for (int j = 0; j < array.GetLength(0); j++)
-    //     {
-    //         sum = sum + array[j, i];
-    //     }
-    //     average = sum / (i+1);
-    //     Console.WriteLine($"Average number of each calomns: {average} ");
-    // }
-    // return average;
-
+    return average;
+}
 
 
 
@@ -84,4 +64,5 @@ int rows = Prompt("Enter the number of rows in the array: ");
 int columns = Prompt("Enter the number of columns in the array: ");
 int[,] array = GetArray(rows, columns, 0, 10);
 PrintArray(array);
-GetColumnAverageNumber(array);
+double[] averageColumns = GetColumnAverageNumber(array);
+Console.WriteLine($"Average number of each calomns: {String.Join("; ", averageColumns)}");
