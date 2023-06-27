@@ -13,19 +13,19 @@ int Prompt(string message)
 }
 
 
-void GetNumbers(int number)
+void GetNaturalNumbers(int number)
 {
     if (number >= 1)
     {
         Console.Write($"{number} ");
-        GetNumbers(number - 1);  // рекурсия, т.е. использование этого же метода в этом же методе
+        GetNaturalNumbers(number - 1);  // рекурсия, т.е. использование этого же метода в этом же методе
     }
 }
 
 
 int number = Prompt("Enter a natural number: ");
 if (number <= 0) Console.WriteLine($"Invalid value");
-GetNumbers(number);
+GetNaturalNumbers(number);
 
 
 
